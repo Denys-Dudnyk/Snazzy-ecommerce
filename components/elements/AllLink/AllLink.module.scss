@@ -1,0 +1,46 @@
+.all {
+	position: absolute;
+	right: 0;
+	top: -65px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	margin-right: 22px;
+	transition: color 0.2s ease-in-out;
+
+	@media (max-width: 800px) {
+		top: -55px;
+	}
+
+	@media (max-width: 490px) {
+		top: -40px;
+	}
+
+	span {
+		position: absolute;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -4px;
+			right: -55px;
+			width: 24px;
+			height: 24px;
+			background-color: #e8e9ea;
+			-webkit-mask: url(/img/simple-arrow.svg) no-repeat 50% 50%;
+			mask: url(/img/simple-arrow.svg) no-repeat 50% 50%;
+			transition: background-color 0.2s ease-in-out;
+		}
+	}
+
+	&:hover span::before {
+		transition: background-color 0.2s ease-in-out;
+		background-color: #9466ff;
+	}
+
+	&:hover {
+		color: #9466ff;
+		transition: color 0.2s ease-in-out;
+	}
+}
