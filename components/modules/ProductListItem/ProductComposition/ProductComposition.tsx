@@ -7,7 +7,7 @@ const ProductComposition = ({ composition }: { composition: string }) => {
 
 	return (
 		<span className={styles.product__composition}>
-			{/* @ts-ignore */}
+			{translations[lang].product.composition}: {/* @ts-ignore */}
 			{translations[lang].catalog[composition]}
 		</span>
 	)

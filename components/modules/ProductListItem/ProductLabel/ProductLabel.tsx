@@ -1,6 +1,7 @@
 import { UseLang } from '@/hooks/useLang'
 import { IProductLabelProps } from '@/types/modules'
-import styles from '@/styles/product-list-item/index.module.scss'
+import styles from '../ProductListItem.module.scss'
+// import styles from '@/styles/product-list-item/index.module.scss'
 const ProductLabel = ({ isNew, isBestseller }: IProductLabelProps) => {
 	const { lang, translations } = UseLang()
 
