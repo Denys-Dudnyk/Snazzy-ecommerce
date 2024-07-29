@@ -142,6 +142,16 @@
 			"found": "Found",
 			"nothing_found": "Nothing found",
 			"collection": "Collection"
+		},
+		"size_table": {
+			"head_circumference": "Head circumference, cm",
+			"size": "Size",
+			"ukrainian_size": "Ukrainian size",
+			"manufacturer_size": "Manufacturer size",
+			"chest_circumference": "Chest circumference, cm",
+			"waist_circumference": "Waist circumference, cm",
+			"hip_circumference": "Hip circumference, cm",
+			"title": "Size table"
 		}
 	},
 	"ru": {
@@ -286,6 +296,16 @@
 			"found": "Найдено",
 			"nothing_found": "Ничего не найдено",
 			"collection": "Коллекция"
+		},
+		"size_table": {
+			"head_circumference": "Обхват головы, см",
+			"size": "Размер",
+			"ukrainian_size": "Украинский размер",
+			"manufacturer_size": "Размер производителя",
+			"chest_circumference": "Обхват груди, в см",
+			"waist_circumference": "Обхват талии, в см",
+			"hip_circumference": "Обхват бедер, в см",
+			"title": "Таблица размеров"
 		}
 	}
 }
