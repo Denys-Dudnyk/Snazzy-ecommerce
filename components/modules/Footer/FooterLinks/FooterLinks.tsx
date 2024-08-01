@@ -2,10 +2,10 @@ const FooterLinks = () => {
 	return (
 		<div className='footer__links'>
 			<span>
-				<a href='https://vc.ru'>vc.ru</a>
+				<a href=''>Partners</a>
 			</span>
 			<span>
-				<a href='https://habr.comu'>habr.comu</a>
+				<a href=''>Partnership</a>
 			</span>
 		</div>
 	)
