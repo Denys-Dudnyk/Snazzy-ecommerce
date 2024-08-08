@@ -8,7 +8,8 @@ import './globalStyles/catalog-menu.css'
 import './globalStyles/search-modal.css'
 import './globalStyles/cart-popup.css'
 import './globalStyles/footer.css'
-import { showQuickViewModal } from '@/context/modals'
+import './globalStyles/auth-popup.css'
+
 import PagesLayout from '@/components/layouts/PagesLayout'
 
 export const metadata: Metadata = {

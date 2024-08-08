@@ -77,7 +77,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 .header__search-overlay,
 .quick-view-modal-overlay,
-.size-table-overlay {
+.size-table-overlay,
+.auth-overlay {
 	background: #16181b;
 	height: 100%;
 	left: 0;
@@ -91,7 +92,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 .header__search-overlay.overlay-active,
 .quick-view-modal-overlay.overlay-active,
-.size-table-overlay.overlay-active {
+.size-table-overlay.overlay-active,
+.auth-overlay.overlay-active {
 	opacity: 0.6;
 	visibility: visible;
 }
@@ -105,6 +107,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .size-table-overlay.overlay-active {
+	z-index: 10;
+}
+
+.auth-overlay.overlay-active {
 	z-index: 10;
 }
 

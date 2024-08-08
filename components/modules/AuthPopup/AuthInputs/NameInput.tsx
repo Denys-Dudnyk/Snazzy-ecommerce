@@ -1,6 +1,9 @@
+import NameErrorMessage from '@/components/elements/NameErrorMessage/NameErrorMessage'
 import { UseLang } from '@/hooks/useLang'
 import { nameValidationRules } from '@/lib/utils/auth'
 import { IAuthInput } from '@/types/authPopup'
+
+import styles from '@/styles/auth-popup/index.module.scss'
 
 const NameInput = ({ register, errors }: IAuthInput) => {
 	const { lang, translations } = UseLang()
@@ -18,6 +21,11 @@ const NameInput = ({ register, errors }: IAuthInput) => {
 						translations[lang].validation.requiredName
 					)
 				)}
+			/>
+			<NameErrorMessage
+				errors={errors}
+				className={styles.error_alert}
+				fieldName='name'
 			/>
 		</div>
 	)

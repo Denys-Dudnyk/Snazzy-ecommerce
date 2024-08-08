@@ -1,11 +1,9 @@
-import { closeAuthPopup } from '@/context/auth'
+import { closeAuthPopup, openAuthPopup } from '@/context/auth'
 import { closeSearchModal, closeSizeTable } from '@/context/modals'
 
-export const removeOverflowHiddenFromBody = (paddingRight = '') => {
+export const removeOverflowHiddenFromBody = () => {
 	const body = document.querySelector('body') as HTMLBodyElement
 	// body.classList.remove('overflow-hidden')
-
-	paddingRight && (body.style.paddingRight = paddingRight)
 }
 export const addOverflowHiddenToBody = (paddingRight = '') => {
 	const body = document.querySelector('body') as HTMLBodyElement
@@ -14,11 +12,9 @@ export const addOverflowHiddenToBody = (paddingRight = '') => {
 	paddingRight && (body.style.paddingRight = paddingRight)
 }
 
-export const removeOverflowHiddenFromBodyMenu = (paddingRight = '') => {
+export const removeOverflowHiddenFromBodyMenu = () => {
 	const body = document.querySelector('body') as HTMLBodyElement
 	body.classList.remove('overflow-hidden-menu')
-
-	paddingRight && (body.style.paddingRight = paddingRight)
 }
 export const addOverflowHiddenToBodyMenu = (paddingRight = '') => {
 	const body = document.querySelector('body') as HTMLBodyElement
@@ -85,8 +81,13 @@ export const closeSizeTableByCheck = (showQuickViewModal: boolean) => {
 	closeSizeTable()
 }
 
+export const handleOpenAuthPopup = () => {
+	addOverflowHiddenToBodyMenu('0')
+	openAuthPopup()
+}
+
 export const handleCloseAuthPopup = () => {
-	removeOverflowHiddenFromBody()
+	removeOverflowHiddenFromBodyMenu()
 	closeAuthPopup()
 }
 

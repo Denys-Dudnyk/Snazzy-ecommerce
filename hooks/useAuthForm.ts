@@ -15,10 +15,13 @@ export const useAuthForm = (
 		handleSubmit,
 	} = useForm<IInputs>()
 
+	const handleSignUpWithOAuth = () => ''
+
 	return {
 		spinner,
 		register,
 		errors,
 		handleSubmit,
+		handleSignUpWithOAuth,
 	}
 }
