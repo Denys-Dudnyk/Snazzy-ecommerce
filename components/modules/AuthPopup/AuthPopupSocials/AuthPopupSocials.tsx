@@ -3,14 +3,8 @@ import {
 	faFacebook,
 	faGithub,
 	faGoogle,
-	faLinkedin,
-	faTwitch,
-	faTwitter,
-	faVk,
 	faXTwitter,
-	faYandex,
 } from '@fortawesome/free-brands-svg-icons'
-import { FcGoogle } from 'react-icons/fc'
 
 const AuthPopupSocials = ({
 	handleSignUpWithOAuth,

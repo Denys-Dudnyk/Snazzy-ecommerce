@@ -32,7 +32,7 @@
 .auth-popup__card {
 	max-width: 470px;
 
-	margin: 200px auto;
+	margin: 75px auto;
 
 	position: relative;
 	z-index: 1000;
@@ -101,13 +101,8 @@
 }
 
 .wow-bg {
-	background-color: #141421;
 	border: 1px solid #2e2e4c;
-	box-shadow:
-		3px 9px 16px rgb(0, 0, 0, 0.4),
-		-3px -3px 10px rgba(255, 255, 255, 0.06),
-		inset 14px 14px 26px rgb(0, 0, 0, 0.3),
-		inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+	background-color: #1d2533;
 	border-radius: 10px;
 	margin-top: 4px;
 }
@@ -572,15 +567,16 @@
 	width: 100%;
 	min-height: 38px;
 	overflow: hidden;
-	border: 1px solid #2e344d;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(28, 31, 47, 0.96);
+	box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5);
+
 	-webkit-transition: all 0.3s ease-in-out 0s;
 	-moz-transition: all 0.3s ease-in-out 0s;
 	-ms-transition: all 0.3s ease-in-out 0s;
 	-o-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
-	box-shadow:
-		0px 2px 26px rgb(0, 0, 0, 0.5),
-		0px 7px 13px rgba(255, 255, 255, 0.03);
 	cursor: pointer;
 	color: #e8e9ea;
 }
@@ -589,11 +585,6 @@
 	background-color: #1c1f2f;
 	border-radius: 50px;
 	min-width: 140px;
-	box-shadow:
-		3px 9px 16px rgb(0, 0, 0, 0.4),
-		-3px -3px 10px rgba(255, 255, 255, 0.06),
-		inset 14px 14px 26px rgb(0, 0, 0, 0.3),
-		inset -3px -3px 15px rgba(255, 255, 255, 0.05);
 	border-style: solid;
 	border-color: #2e344d;
 }
@@ -602,18 +593,15 @@
 	width: 100%;
 	height: 38px;
 	padding: 6px 12px;
-	background: rgba(28, 31, 47, 0.16);
 	border-radius: 4px;
 	overflow: hidden;
-	border: 1px solid #2e344d;
+	border: rgba(28, 31, 47, 0.96);
 	-webkit-transition: all 0.3s ease-in-out 0s;
 	-moz-transition: all 0.3s ease-in-out 0s;
 	-ms-transition: all 0.3s ease-in-out 0s;
 	-o-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
-	box-shadow:
-		10px 10px 36px rgb(0, 0, 0, 0.5),
-		-13px -13px 23px rgba(255, 255, 255, 0.03);
+	background: rgba(28, 31, 47, 0.96);
 	margin-top: 24px;
 	color: #e8e9ea;
 }
@@ -633,12 +621,10 @@
 .form__block__input:focus {
 	border: 1px solid #9466ff;
 	outline: 0;
-	background: rgb(17, 20, 31);
+	background: rgba(28, 31, 47, 0.96);
+
 	border-radius: 4px;
 	transition: all 0.3s ease-in-out 0s;
-	box-shadow:
-		10px 10px 36px rgb(0, 0, 0, 0.5),
-		-13px -13px 23px rgba(255, 255, 255, 0.03);
 }
 
 .inner__switch {
@@ -647,6 +633,30 @@
 
 .inner__switch:hover {
 	color: #70f;
+}
+
+.cart-body__or {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: 32px 0;
+}
+
+.cart-body__or__line {
+	flex: 1;
+	border: none;
+	border-bottom: 1px solid #6c757d;
+	margin: 0 15px;
+}
+
+.cart-body__or__text {
+	color: #6c757d;
+}
+
+.cart-body__socials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .socials__btn {
@@ -660,6 +670,10 @@
 	box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5);
 	margin-right: 15px !important;
 	transition: border-color 0.2s linear;
+}
+
+.socials__btn:last-child {
+	margin-right: 0 !important;
 }
 
 .socials__btn:hover {

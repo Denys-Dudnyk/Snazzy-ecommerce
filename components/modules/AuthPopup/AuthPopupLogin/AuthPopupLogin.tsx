@@ -61,6 +61,11 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
 						</div>
 					</div>
 				</form>
+				<div className='cart-body__or'>
+					<hr className='cart-body__or__line' />
+					<span className='cart-body__or__text'>Or</span>
+					<hr className='cart-body__or__line' />
+				</div>
 				<AuthPopupSocials handleSignUpWithOAuth={handleSignUpWithOAuth} />
 			</div>
 		</div>

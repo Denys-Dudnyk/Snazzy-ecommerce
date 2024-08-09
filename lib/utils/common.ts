@@ -82,12 +82,12 @@ export const closeSizeTableByCheck = (showQuickViewModal: boolean) => {
 }
 
 export const handleOpenAuthPopup = () => {
-	addOverflowHiddenToBodyMenu('0')
+	addOverflowHiddenToBody()
 	openAuthPopup()
 }
 
 export const handleCloseAuthPopup = () => {
-	removeOverflowHiddenFromBodyMenu()
+	removeOverflowHiddenFromBody()
 	closeAuthPopup()
 }
 

@@ -14,7 +14,7 @@
 	position: relative;
 	background-color: #101828;
 	width: 100%;
-	min-height: 800px;
+	min-height: 100vh;
 
 	background-image: url(/img/menu-bg-small.png);
 	background-repeat: no-repeat;

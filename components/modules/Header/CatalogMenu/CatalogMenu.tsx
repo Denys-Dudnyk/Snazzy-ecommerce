@@ -7,7 +7,7 @@ import { useUnit } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import Header from '../Header'
-import { removeOverflowHiddenFromBody } from '@/lib/utils/common'
+import { removeOverflowHiddenFromBodyMenu } from '@/lib/utils/common'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import CatalogMenuButton from './CatalogMenuButton/CatalogMenuButton'
 import CatalogMenuList from './CatalogMenuList/CatalogMenuList'
@@ -57,7 +57,7 @@ const CatalogMenu = () => {
 	}
 
 	const handleCloseMenu = () => {
-		removeOverflowHiddenFromBody()
+		removeOverflowHiddenFromBodyMenu()
 		closeCatalogMenu()
 		setShowClothList(false)
 		setShowAccessoriesList(false)
