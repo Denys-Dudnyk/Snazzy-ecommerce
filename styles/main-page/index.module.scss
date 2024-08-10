@@ -73,7 +73,10 @@
 			padding-top: 160px !important;
 			top: 170px;
 			left: -130px;
-			padding-bottom: 400px !important ;
+			/* padding-bottom: 400px !important ; */
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			/* overflow-y: visible !important; */
 		}
 
