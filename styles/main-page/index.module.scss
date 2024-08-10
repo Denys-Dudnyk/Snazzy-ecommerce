@@ -39,7 +39,7 @@
 	}
 
 	&__container {
-		position: relative;
+		position: relative !important;
 	}
 
 	&__slider {
@@ -73,7 +73,7 @@
 			padding-top: 160px !important;
 			top: 170px;
 			left: -130px;
-			overflow-y: auto !important;
+			/* overflow-y: auto !important; */
 		}
 
 		@media (max-width: 380px) {
@@ -81,7 +81,7 @@
 		}
 
 		&__slide {
-			position: relative;
+			/* position: relative; */
 			width: 190px !important;
 
 			@media (max-width: 1460px) {
