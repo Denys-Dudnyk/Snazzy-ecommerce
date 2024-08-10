@@ -74,7 +74,6 @@
 			top: 170px;
 			left: -130px;
 			min-height: 800px;
-			/* padding-bottom: 400px !important ; */
 			/* overflow-y: visible !important; */
 		}
 
@@ -93,6 +92,7 @@
 
 			@media (max-width: 990px) {
 				width: 110px !important;
+				height: 900px !important;
 			}
 
 			&__img {
