@@ -601,9 +601,15 @@
 	-ms-transition: all 0.3s ease-in-out 0s;
 	-o-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
-	background: rgba(28, 31, 47, 0.96);
+	background: rgba(28, 31, 47, 0.96) !important;
 	margin-top: 24px;
 	color: #e8e9ea;
+}
+
+input:-webkit-autofill {
+	background-color: rgba(28, 31, 47, 0.96) !important;
+	appearance: none !important;
+	color: #e8e9ea !important;
 }
 
 .form__block {

@@ -167,7 +167,7 @@
 			"password": "Password"
 		},
 		"validation": {
-			"invalid_value": "Invalid value!",
+			"invalid_value": "Min 2 words",
 			"requiredName": "Enter your name!",
 			"invalid_phone": "Invalid phone!",
 			"required_email": "Enter your email!",
