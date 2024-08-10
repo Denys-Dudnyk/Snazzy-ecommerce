@@ -71,10 +71,10 @@
 
 		@media (max-width: 760px) {
 			padding-top: 160px !important;
-			/* top: 170px; */
-			/* left: -130px; */
-			/* height: 800px; */
-			/* overflow-y: auto !important; */
+			top: 170px;
+			left: -130px;
+			padding-bottom: 160px !important ;
+			overflow-y: visible !important;
 		}
 
 		@media (max-width: 380px) {
@@ -82,8 +82,9 @@
 		}
 
 		&__slide {
-			/* position: relative; */
+			position: relative;
 			width: 190px !important;
+			height: 100% !important;
 
 			@media (max-width: 1460px) {
 				width: 150px !important;
