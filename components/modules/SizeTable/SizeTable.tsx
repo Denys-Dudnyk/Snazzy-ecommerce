@@ -18,7 +18,7 @@ const SizeTable = () => {
 	const [xlSize, SetXlSize] = useState(false)
 	const [xxlSize, SetXxlSize] = useState(false)
 
-	const { product, selectedSize, setSelectedSize } = useCartAction()
+	const { selectedSize, setSelectedSize } = useCartAction()
 
 	const productSizes = useUnit($sizeTableSizes)
 

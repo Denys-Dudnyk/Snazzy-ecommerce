@@ -22,6 +22,7 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
 			password: data.password,
 			isOAuth: false,
 		})
+
 	return (
 		<div className='card-back'>
 			<AuthPopupClose />

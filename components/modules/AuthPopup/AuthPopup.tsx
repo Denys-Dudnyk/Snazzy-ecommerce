@@ -14,7 +14,7 @@ const AuthPopup = () => {
 	}
 
 	return (
-		<div className='auth-popup'>
+		<div className='container auth-popup'>
 			<div>
 				<div className='starsec'></div>
 				<div className='starthird'></div>

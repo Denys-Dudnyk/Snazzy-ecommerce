@@ -4,8 +4,35 @@ import instance from './apiInstance'
 import { onAuthSuccess } from '@/lib/utils/auth'
 import { ISignUpFx } from '@/types/authPopup'
 
-export const signUpFx = createEffect(
+export const oauthFx = createEffect(
 	async ({ name, password, email }: ISignUpFx) => {
+		try {
+			const { data } = await instance.post('/api/users/oauth', {
+				name,
+				password,
+				email,
+			})
+
+			onAuthSuccess("You're logged in!", data)
+
+			return data.user
+		} catch (error) {
+			toast.error((error as Error).message)
+		}
+	}
+)
+
+export const signUpFx = createEffect(
+	async ({ name, password, email, isOAuth }: ISignUpFx) => {
+		if (isOAuth) {
+			await oauthFx({
+				email,
+				password,
+				name,
+			})
+			return
+		}
+
 		const { data } = await instance.post('/api/users/signup', {
 			name,
 			password,
@@ -23,14 +50,28 @@ export const signUpFx = createEffect(
 	}
 )
 
-export const signInFx = createEffect(async ({ email, password }: ISignUpFx) => {
-	const { data } = await instance.post('/api/users/login', { email, password })
-	if (data.warningMessage) {
-		toast.error(data.warningMessage)
-		return
+export const signInFx = createEffect(
+	async ({ email, password, isOAuth }: ISignUpFx) => {
+		if (isOAuth) {
+			await oauthFx({
+				email,
+				password,
+			})
+			return
+		}
+
+		const { data } = await instance.post('/api/users/login', {
+			email,
+			password,
+		})
+
+		if (data.warningMessage) {
+			toast.error(data.warningMessage)
+			return
+		}
+
+		onAuthSuccess("You're logged in!", data)
+
+		return data
 	}
-
-	onAuthSuccess("You're logged in!", data)
-
-	return data
-})
+)
