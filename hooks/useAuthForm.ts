@@ -10,8 +10,7 @@ export const useAuthForm = (
 	event: EventCallable<ISignUpFx>
 ) => {
 	const spinner = useUnit(initialSpinner)
-	const { isConnected, user, connectWithPopup, connectWithRedirect } =
-		useEarthoOne()
+	const { isConnected, user, connectWithPopup } = useEarthoOne()
 
 	const {
 		register,
@@ -23,9 +22,9 @@ export const useAuthForm = (
 		if (isSideActive) {
 			if (isConnected) {
 				event({
-					name: user?.user.displayName,
-					email: user?.user.email,
-					password: user?.user.uid,
+					name: user?.displayName,
+					email: user?.email!,
+					password: user?.uid!,
 					isOAuth: true,
 				})
 			}
