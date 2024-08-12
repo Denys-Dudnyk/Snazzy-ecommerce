@@ -23,8 +23,8 @@ export const useAuthForm = (
 			if (isConnected) {
 				event({
 					name: user?.displayName,
-					email: user?.email!,
-					password: user?.uid!,
+					email: String(user?.email),
+					password: String(user?.uid),
 					isOAuth: true,
 				})
 			}
