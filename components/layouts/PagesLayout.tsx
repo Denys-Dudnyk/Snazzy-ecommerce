@@ -12,10 +12,15 @@ import {
 	handleCloseAuthPopup,
 	removeOverflowHiddenFromBody,
 } from '@/lib/utils/common'
-import { $openAuthPopup } from '@/context/auth'
+
 import { Toaster } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 import { EarthoOneProvider } from '@eartho/one-client-react'
+// import { EarthoClientProvider } from '@eartho/one-client-nextjs/client'
+import { $openAuthPopup } from '@/context/auth/state'
+
+import '@/context/auth/init'
+import '@/context/user/init'
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
 	const [isClient, setIsClient] = useState(false)
@@ -36,8 +41,8 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
 		<>
 			{isClient ? (
 				<EarthoOneProvider
-					clientId={`${process.env.NEXT_PUBLIC_OAUTH_CLIENT_ID}`}
 					domain=''
+					clientId={`${process.env.NEXT_PUBLIC_OAUTH_CLIENT_ID}`}
 				>
 					<html lang='en'>
 						<body>
@@ -56,9 +61,12 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
 								onClick={handleCloseSizeTable}
 							/>
 							<div
-								className={`auth-overlay ${openAuthPopup ? 'overlay-active' : ''}`}
+								className={`auth-overlay ${
+									openAuthPopup ? 'overlay-active' : ''
+								}`}
 								onClick={handleCloseAuthPopup}
 							/>
+
 							<Toaster position='top-center' reverseOrder={false} />
 						</body>
 					</html>

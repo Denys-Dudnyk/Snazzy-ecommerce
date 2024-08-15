@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import AuthPopupRegistration from './AuthPopupRegistration/AuthPopupRegistration'
 import AuthPopupLogin from './AuthPopupLogin/AuthPopupLogin'
+import { useEarthoOne } from '@eartho/one-client-react'
 
 const AuthPopup = () => {
 	const [isAuthSwitched, setIsAuthSwitched] = useState(false)
 	const [isSignInActive, setIsSignInActive] = useState(false)
 	const [isSignUpActive, setIsSignUpActive] = useState(true)
+	const { isConnected } = useEarthoOne()
 
 	const toggleAuth = () => {
 		setIsAuthSwitched(!isAuthSwitched)

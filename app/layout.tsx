@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PagesLayout from '@/components/layouts/PagesLayout'
 import './globalStyles/normalize.css'
 import './globalStyles/globals.css'
 import './globalStyles/header.css'
@@ -10,8 +11,6 @@ import './globalStyles/cart-popup.css'
 import './globalStyles/footer.css'
 import './globalStyles/auth-popup.css'
 import './globalStyles/header-profile.css'
-
-import PagesLayout from '@/components/layouts/PagesLayout'
 
 export const metadata: Metadata = {
 	title: 'Create Next App',

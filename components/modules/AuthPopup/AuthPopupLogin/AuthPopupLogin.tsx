@@ -1,4 +1,4 @@
-import { handleSignIn } from '@/context/auth'
+import { handleSignIn, singInFx } from '@/context/auth'
 import { useAuthForm } from '@/hooks/useAuthForm'
 import { IAuthSideProps, IInputs } from '@/types/authPopup'
 import AuthPopupClose from '../AuthPopupClose/AuthPopupClose'
@@ -8,13 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { UseLang } from '@/hooks/useLang'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import AuthPopupSocials from '../AuthPopupSocials/AuthPopupSocials'
-import { signInFx } from '@/api/auth'
 
 const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
 	const { lang, translations } = UseLang()
 
-	const { spinner, register, errors, handleSubmit, handleSignUpWithOAuth } =
-		useAuthForm(signInFx.pending, isSideActive, handleSignIn)
+	const { spinner, register, errors, handleSubmit, handleSignupWithOAuth } =
+		useAuthForm(singInFx.pending, isSideActive, handleSignIn)
 
 	const submitForm = (data: IInputs) =>
 		handleSignIn({
@@ -67,7 +66,7 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
 					<span className='cart-body__or__text'>Or</span>
 					<hr className='cart-body__or__line' />
 				</div>
-				<AuthPopupSocials handleSignUpWithOAuth={handleSignUpWithOAuth} />
+				<AuthPopupSocials handleSignUpWithOAuth={handleSignupWithOAuth} />
 			</div>
 		</div>
 	)

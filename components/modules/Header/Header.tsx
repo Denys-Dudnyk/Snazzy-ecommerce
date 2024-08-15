@@ -1,7 +1,7 @@
 'use client'
 
 import { UseLang } from '@/hooks/useLang'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Logo from '@/components/elements/Logo'
 import Link from 'next/link'
 import Menu from './Menu'
@@ -10,18 +10,30 @@ import {
 	addOverflowHiddenToBody,
 	addOverflowHiddenToBodyMenu,
 	handleOpenAuthPopup,
+	triggerLoginCheck,
 } from '@/lib/utils/common'
 
 import CartPopup from './CartPopup/CartPopup'
 import HeaderProfile from './HeaderProfile/HeaderProfile'
 import { useUnit } from 'effector-react'
-import { $isAuth } from '@/context/auth'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
+import { useEarthoOne } from '@eartho/one-client-react'
+import { $isAuth } from '@/context/auth/state'
+import { loginCheckFx } from '@/context/user'
+import { $user } from '@/context/user/state'
+
 const Header: FC = () => {
 	const isAuth = useUnit($isAuth)
-	const loginCheckSpinner = false
+	const loginCheckSpinner = useUnit(loginCheckFx.pending)
+	// const { isLoading } = useEarthoOne()
+	// const { isConnected } = useEarthoOne()
+
+	const user = useUnit($user)
+
+	console.log(user)
 
 	const { lang, translations } = UseLang()
 
@@ -34,6 +46,10 @@ const Header: FC = () => {
 		addOverflowHiddenToBody()
 		openSearchModal()
 	}
+
+	useEffect(() => {
+		triggerLoginCheck()
+	}, [])
 
 	return (
 		<header className='header'>
@@ -78,11 +94,6 @@ const Header: FC = () => {
 								onClick={handleOpenAuthPopup}
 							/>
 						)}
-
-						{/* <Link
-							href='/profile'
-							className='header__links__item__btn header__links__item__btn--profile'
-						/> */}
 					</li>
 				</ul>
 			</div>

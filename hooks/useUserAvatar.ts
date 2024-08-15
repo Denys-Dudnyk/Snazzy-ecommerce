@@ -1,6 +1,6 @@
+import { $user } from '@/context/user/state'
 import { useUnit } from 'effector-react'
 import { useState, useEffect } from 'react'
-import { $user } from '@/context/user'
 
 export const useUserAvatar = () => {
 	const user = useUnit($user)
@@ -14,11 +14,18 @@ export const useUserAvatar = () => {
 
 		const oauthAvatar = JSON.parse(
 			localStorage.getItem(
-				'@@oneclientjs@@::UVMX60vO2bPtulGKtEhu::@@user@@'
+				'@@oneclientjs@@::tn277kKqfm1sannQhND9::@@user@@'
 			) as string
 		)
 
 		console.log(oauthAvatar)
+
+		// const saveAvatar = localStorage.setItem(
+		// 	'user',
+		// 	JSON.stringify(oauthAvatar.decodedToken.user.photoURL)
+		// )
+
+		// console.log(saveAvatar)
 
 		if (!oauthAvatar) {
 			return

@@ -6,3 +6,8 @@ export interface IUser {
 	image: string
 	role: string
 }
+
+export interface ILoginCheckFx {
+	jwt: string
+	setShouldShowContent?: (arg0: boolean) => void
+}

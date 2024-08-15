@@ -43,12 +43,7 @@ const ProductListItem = ({ item, title }: IProductsListItemProps) => {
 							subtitleRectClassName={styles.list__item_ad__subtitle__rect}
 						/>
 						<div className={styles.list__item_ad__img}>
-							<Image
-								src={item.images[0]}
-								alt={item.name}
-								fill
-								objectFit='contain'
-							/>
+							<Image src={item.images[0]} alt={item.name} fill />
 						</div>
 						<p className={styles.list__item_ad__title}>
 							<span>
@@ -102,12 +97,7 @@ const ProductListItem = ({ item, title }: IProductsListItemProps) => {
 						href={`/catalog/${item.category}/${item._id}`}
 						className={styles.list__item__img}
 					>
-						<Image
-							src={item.images[0]}
-							alt={item.name}
-							fill
-							objectFit='contain'
-						/>
+						<Image src={item.images[0]} alt={item.name} fill />
 					</Link>
 
 					<div className={styles.list__item__inner}>
