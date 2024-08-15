@@ -33,12 +33,10 @@ export const useAuthForm = (
 		}
 	}, [isConnected])
 
-	const handleSignupWithOAuth = () =>
+	const handleSignupWithOAuth = (provider: string) =>
 		connectWithPopup({
 			accessId: `${process.env.NEXT_PUBLIC_OAUTH_ACCESS_ID}`,
-			// authorizationParams: {
-			// 	redirect_uri: `${handleRedirectCallback}`,
-			// },
+			enabledAuthProviders: [provider],
 		})
 
 	return {

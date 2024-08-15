@@ -11,32 +11,32 @@ import React from 'react'
 const AuthPopupSocials = ({
 	handleSignUpWithOAuth,
 }: {
-	handleSignUpWithOAuth: VoidFunction
+	handleSignUpWithOAuth: (provider: string) => void
 }) => {
 	return (
 		<div className='cart-body__socials'>
 			<button
 				className='btn-reset socials__btn gh-color'
-				onClick={handleSignUpWithOAuth}
+				onClick={() => handleSignUpWithOAuth('github')}
 			>
 				<FontAwesomeIcon icon={faGithub} size='lg' />
 			</button>
 			<button
 				className='btn-reset socials__btn g-color'
-				onClick={handleSignUpWithOAuth}
+				onClick={() => handleSignUpWithOAuth('google')}
 			>
 				<FontAwesomeIcon icon={faGoogle} size='lg' />
 			</button>
 
 			<button
 				className='btn-reset socials__btn f-color'
-				onClick={handleSignUpWithOAuth}
+				onClick={() => handleSignUpWithOAuth('facebook')}
 			>
 				<FontAwesomeIcon icon={faFacebook} size='lg' />
 			</button>
 			<button
 				className='btn-reset socials__btn tw-color'
-				onClick={handleSignUpWithOAuth}
+				onClick={() => handleSignUpWithOAuth('twitter')}
 			>
 				<FontAwesomeIcon icon={faXTwitter} size='lg' />
 			</button>
