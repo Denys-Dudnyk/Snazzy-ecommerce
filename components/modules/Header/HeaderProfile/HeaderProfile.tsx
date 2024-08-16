@@ -22,8 +22,8 @@ const HeaderProfile = forwardRef<HTMLDivElement, IWrappedComponentProps>(
 					<Image
 						src={src ? src : '/img/profile.svg'}
 						alt={alt ? alt : 'profile'}
-						width={24}
-						height={24}
+						width='24'
+						height='24'
 					/>
 				</button>
 
