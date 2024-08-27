@@ -1,6 +1,19 @@
 import { JWTError } from '@/constants/jwt'
 import { refreshTokenFx } from '@/context/auth'
+import {
+	addProductsFromLSToCartFx,
+	addProductToCartFx,
+	deleteCartItemFx,
+	getCartItemsFx,
+	updateCartItemCountFx,
+} from '@/context/cart'
 import { loginCheckFx } from '@/context/user'
+import {
+	IAddProductsFromLSToCartFx,
+	IAddProductToCartFx,
+	IDeleteCartItemFx,
+	IUpdateCartItemCountFx,
+} from '@/types/cart'
 
 export const handleJWTError = async (
 	errorName: string,
@@ -17,6 +30,35 @@ export const handleJWTError = async (
 			const { repeatRequestMethodName, payload } = repeatRequestAfterRefreshData
 
 			switch (repeatRequestMethodName) {
+				case 'getCartItemsFx':
+					return await getCartItemsFx({
+						jwt: newTokens.accessToken,
+					})
+
+				case 'addProductToCartFx':
+					return await addProductToCartFx({
+						...(payload as IAddProductToCartFx),
+						jwt: newTokens.accessToken,
+					})
+
+				case 'addProductsFromLSToCartFx':
+					return addProductsFromLSToCartFx({
+						...(payload as IAddProductsFromLSToCartFx),
+						jwt: newTokens.accessToken,
+					})
+
+				case 'updateCartItemCountFx':
+					return updateCartItemCountFx({
+						...(payload as IUpdateCartItemCountFx),
+						jwt: newTokens.accessToken,
+					})
+
+				case 'deleteCartItemFx':
+					return deleteCartItemFx({
+						...(payload as IDeleteCartItemFx),
+						jwt: newTokens.accessToken,
+					})
+
 				case 'loginCheckFx':
 					await loginCheckFx({
 						jwt: newTokens.accessToken,

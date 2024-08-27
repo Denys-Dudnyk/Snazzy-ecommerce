@@ -115,6 +115,15 @@
 			border-radius: 32px;
 			background-color: #9466ff;
 			padding: 12px 24px !important;
+			width: 99px;
+			height: 43px;
+
+			svg {
+				position: absolute;
+				top: 13px;
+				left: 45%;
+			}
+
 			transition:
 				background-color 0.2s ease-in-out,
 				opacity 0.2s ease-in-out,
@@ -137,12 +146,12 @@
 			&_added {
 				opacity: 1;
 				visibility: visible;
-				background-color: #16d9a6 !important;
+				background-color: #9466ff !important;
 				pointer-events: none !important;
 				cursor: none !important;
 
 				&:hover {
-					background-color: #16d9a6;
+					background-color: #9466ff;
 				}
 			}
 

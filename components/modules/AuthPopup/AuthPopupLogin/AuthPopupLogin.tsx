@@ -41,7 +41,15 @@ const AuthPopupLogin = ({ toggleAuth, isSideActive }: IAuthSideProps) => {
 						<div className='inner__top'>
 							<button className='inner__btn' type='submit' disabled={spinner}>
 								{spinner ? (
-									<FontAwesomeIcon icon={faSpinner} spin />
+									// <l-tailspin
+									// 	size='16'
+									// 	stroke='2'
+									// 	stroke-length='0.25'
+									// 	bg-opacity='0.1'
+									// 	speed='0.9'
+									// 	color='white'
+									// ></l-tailspin>
+									<FontAwesomeIcon icon={faSpinner} spin color='#fff' />
 								) : (
 									translations[lang].auth_popup.login_text
 								)}

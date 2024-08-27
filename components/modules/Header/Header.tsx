@@ -1,7 +1,7 @@
 'use client'
 
 import { UseLang } from '@/hooks/useLang'
-import { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 import Logo from '@/components/elements/Logo'
 import Link from 'next/link'
 import Menu from './Menu'
@@ -20,22 +20,25 @@ import { useUnit } from 'effector-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
-import { useEarthoOne } from '@eartho/one-client-react'
 import { $isAuth } from '@/context/auth/state'
 import { loginCheckFx } from '@/context/user'
 import { $user } from '@/context/user/state'
+import { useCartByAuth } from '@/hooks/useCartByAuth'
+import { addProductsFromLSToCart, cart, setCartFromLS } from '@/context/cart'
+import { setLang } from '@/context/lang'
 
-const Header: FC = () => {
+const Header = () => {
 	const isAuth = useUnit($isAuth)
 	const loginCheckSpinner = useUnit(loginCheckFx.pending)
-	// const { isLoading } = useEarthoOne()
-	// const { isConnected } = useEarthoOne()
 
 	const user = useUnit($user)
+	const currentCartByAuth = useCartByAuth()
 
-	console.log(user)
+	console.log(currentCartByAuth)
 
 	const { lang, translations } = UseLang()
+
+	// Default values shown
 
 	const handleOpenMenu = () => {
 		addOverflowHiddenToBodyMenu()
@@ -48,8 +51,35 @@ const Header: FC = () => {
 	}
 
 	useEffect(() => {
+		const lang = JSON.parse(localStorage.getItem('lang') as string)
+		const cart = JSON.parse(localStorage.getItem('cart') as string)
+
+		if (lang) {
+			if (lang === 'ru' || lang === 'en') {
+				setLang(cart)
+			}
+		}
+
+		if (cart) {
+			setCartFromLS(cart)
+		}
+
 		triggerLoginCheck()
 	}, [])
+
+	useEffect(() => {
+		if (isAuth) {
+			const auth = JSON.parse(localStorage.getItem('auth') as string)
+			const cartFromLS = JSON.parse(localStorage.getItem('cart') as string)
+
+			if (cartFromLS && Array.isArray(cartFromLS)) {
+				addProductsFromLSToCart({
+					jwt: auth.accessToken,
+					cartItems: cartFromLS,
+				})
+			}
+		}
+	}, [isAuth])
 
 	return (
 		<header className='header'>

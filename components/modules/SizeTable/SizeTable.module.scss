@@ -82,7 +82,16 @@
 		color: #fff;
 		font-size: 16px;
 		font-weight: 500;
+		min-width: 127px;
+		height: 43px;
+		position: relative;
 		transition: background-color 0.2s ease-in-out;
+
+		svg {
+			position: absolute;
+			top: 13px;
+			left: 45%;
+		}
 
 		&:hover {
 			background-color: #70f !important;

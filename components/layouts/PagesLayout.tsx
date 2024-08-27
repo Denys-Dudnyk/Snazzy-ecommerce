@@ -16,11 +16,11 @@ import {
 import { Toaster } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 import { EarthoOneProvider } from '@eartho/one-client-react'
-// import { EarthoClientProvider } from '@eartho/one-client-nextjs/client'
 import { $openAuthPopup } from '@/context/auth/state'
 
 import '@/context/auth/init'
 import '@/context/user/init'
+import '@/context/cart/init'
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
 	const [isClient, setIsClient] = useState(false)

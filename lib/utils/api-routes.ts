@@ -3,6 +3,7 @@ import jwt, { VerifyErrors } from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import { shuffle } from './common'
 import { NextResponse } from 'next/server'
+import clientPromise from '../mongodb'
 
 export const getDbAndReqBody = async (
 	clientPromise: Promise<MongoClient>,
